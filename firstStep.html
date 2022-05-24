@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-    <script src="./lib/Cesium/Cesium.js"></script>
-    <link href="./lib/Cesium/Widgets/widgets.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="cesiumContainer"></div>
-    <script>
-      // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+  <script src="./lib/Cesium/Cesium.js"></script>
+  <link href="./lib/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+    // Your access token can be found at: https://cesium.com/ion/tokens.
+    // Replace `your_access_token` with your Cesium ion access token.
+
+    /* Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2NjU0MGI3NC1iZjM2LTQzNzctYjM3Yy0zMmU2NGQyNTBiM2MiLCJpZCI6MjU5LCJpYXQiOjE2MzA0OTk1NzV9.xNFmNo8X26_nTRRouMiQSbmrOYel9uLf-eXp_q6htb4'; */
+
+    // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
     const viewer = new Cesium.Viewer('cesiumContainer', {
       terrainProvider: Cesium.createWorldTerrain()
     });    
@@ -22,6 +28,7 @@
         pitch : Cesium.Math.toRadians(-15.0),
       }
     });
-    </script>
-  </body>
+  </script>
+ </div>
+</body>
 </html>
