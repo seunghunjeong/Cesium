@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+  <script src="./lib/Cesium/Cesium.js"></script>
+  <link href="./lib/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <button id="toggle-building">Toggle new building</button>
+  <script>
+     // Keep your Cesium.Ion.defaultAccessToken = 'your_token_here' line from above. 
+    // STEP 2 CODE
+    // Initialize the viewer with Cesium World Terrain.
+    const viewer = new Cesium.Viewer('cesiumContainer', {
+      terrainProvider: Cesium.createWorldTerrain()
+    });
+    // Add Cesium OSM Buildings.
+    const buildingsTileset = viewer.scene.primitives.add(Cesium.createOsmBuildings());
+    // Fly the camera to Denver, Colorado at the given longitude, latitude, and height.
+    /* viewer.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(-104.9965, 39.74248, 4000)
+    }); */
+    viewer.dataSources.add(Cesium.KmlDataSource.load('../UnitTest/5.3.1 3D Model/file/sgg.kml',
+     {
+          camera: viewer.scene.camera,
+          canvas: viewer.scene.canvas
+     })
+);
+  </script>
+ </div>
+</body>
+</html>
