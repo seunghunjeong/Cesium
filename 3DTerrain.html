@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Include the CesiumJS JavaScript and CSS files -->
+  <script src="./lib/Cesium/Cesium.js"></script>
+  <link href="./lib/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+    // Your access token can be found at: https://cesium.com/ion/tokens.
+    // Replace `your_access_token` with your Cesium ion access token.
+
+    /* Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2NjU0MGI3NC1iZjM2LTQzNzctYjM3Yy0zMmU2NGQyNTBiM2MiLCJpZCI6MjU5LCJpYXQiOjE2MzA0OTk1NzV9.xNFmNo8X26_nTRRouMiQSbmrOYel9uLf-eXp_q6htb4'; */
+
+    // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+    terrainProvider : Cesium.createWorldTerrain({
+      requestVertexNormals: true,
+        requestWaterMask: true
+    })
+  });
+viewer.scene.globe.enableLighting = true;
+  </script>
+ </div>
+</body>
+</html>
